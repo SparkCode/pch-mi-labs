@@ -14,12 +14,14 @@ namespace MemoryManagement1
             using (timer.Start())
             {
                 // do things
+                var array = new int[10000].Select(x => Guid.NewGuid()).ToList();
             }
             Console.WriteLine(timer.ElapsedMilliseconds);
 
             using (timer.Continue())
             {
                 // do things
+                var array = new int[10000].Select(x => new Timer().Start()).ToList();
             }
             Console.WriteLine(timer.ElapsedMilliseconds);
         }
